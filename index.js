@@ -104,6 +104,7 @@ app.put('/update_task', (req, res) => {
 
 // Delete
 app.delete('/delete_task', async (req, res)=>{
+    console.log(req.body.id)
   let data = await  Todo.findByIdAndDelete({_id:req.body.id})
-  res.send({message:'deleted succuss'})
+  res.send({message:'deleted succuss',data})
 })
